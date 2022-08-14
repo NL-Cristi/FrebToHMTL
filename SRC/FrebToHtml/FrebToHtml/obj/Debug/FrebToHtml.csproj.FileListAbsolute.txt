@@ -1,0 +1,11 @@
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\bin\Debug\FrebToHtml.exe.config
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\bin\Debug\FrebToHtml.exe
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\bin\Debug\FrebToHtml.pdb
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\bin\Debug\CommandLine.dll
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\bin\Debug\CommandLine.xml
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\obj\Debug\FrebToHtml.csproj.AssemblyReference.cache
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\obj\Debug\FrebToHtml.csproj.SuggestedBindingRedirects.cache
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\obj\Debug\FrebToHtml.csproj.CoreCompileInputs.cache
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\obj\Debug\FrebToHtml.csproj.CopyComplete
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\obj\Debug\FrebToHtml.exe
+E:\FromInternet\FrebToHMTL\SRC\FrebToHtml\FrebToHtml\obj\Debug\FrebToHtml.pdb
