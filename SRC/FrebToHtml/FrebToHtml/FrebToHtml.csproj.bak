@@ -9,7 +9,6 @@
     <RootNamespace>FrebToHtml</RootNamespace>
     <AssemblyName>FrebToHtml</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>

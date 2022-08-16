@@ -1,7 +1,4 @@
-﻿using CommandLine;
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -15,47 +12,52 @@ namespace FrebToHtml
 {
     internal class Program
     {
-        class Options
-        {
-            [Option('s', "Source",
-                Required = true,
-                HelpText = "Source file\folder(XML) that we want to convert to HTML.")]
-            public string Source { get; set; }
-
-            [Option('d', "Destination",
-                Required = true,
-                HelpText = "Destination file\folder of the HTML file we generat")]
-            public string Destination { get; set; }
-
-        }
-
         static void Main(string[] args)
         {
-            CommandLine.Parser.Default.ParseArguments<Options>(args)
-              .WithParsed(RunOptions)
-              .WithNotParsed(HandleParseError);
-        }
-        static void RunOptions(Options opts)
-        {
-            //handle options
-            Console.WriteLine(opts.Source);
-            Console.WriteLine(opts.Destination);
+            var myChecks = new MyChecks();
 
-        }
-        static void HandleParseError(IEnumerable<Error> errs)
-        {
-            //handle errors
-            Console.WriteLine("If you find any errors please share them via mail :\n cristian@clamsen.com or on github");
-        }
+            if (args.Any(a => a.Contains(myChecks.HelpString)) || args.Length == 0)
+            {
+                MyHelpText.ShowMessage();
+            }
+            else
+            {
+                if (!args.Any(a => a.Contains(myChecks.KindString)) || !args.Any(a => a.Contains(myChecks.SourceString)))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Please check --kind or --source values");
+                }
+                else
+                {
+                    var paramsToUse = new MyAppParams(args, myChecks);
+                    if (String.IsNullOrEmpty(paramsToUse.Kind) || (String.IsNullOrEmpty(paramsToUse.Source)))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Please check if --kind or --source values are missing");
+                    }
+                    else
+                    {
 
-        static void ConvertXmlToHTML(string Source,string destination)
-        {
-            String myHtmlFile = Source + ".hmtl";
-            var myXslTrans = new XslCompiledTransform();
-            XsltSettings settings = new XsltSettings(false, true);
+                        if ((paramsToUse.Kind.ToLowerInvariant() == "file") || (paramsToUse.Kind.ToLowerInvariant() == "folder"))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
 
-            myXslTrans.Load(Source, settings, new XmlUrlResolver());
-            myXslTrans.Transform(destination, myHtmlFile);
+                            Console.WriteLine($"Merge cu {paramsToUse.Kind}");
+                            XmltoHTML.Convert(paramsToUse);
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"Please check --kind LAST value supplied");
+
+                        }
+                    }
+
+                }
+            }
+
+
+
 
         }
 
